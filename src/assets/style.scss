@@ -1,0 +1,65 @@
+// Custom antd css
+.ant-layout-header {
+    padding: 0;
+    background: #ffffff;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo {
+    width: 180px;
+    text-align: center;
+    font-size: 25px;
+    text-shadow: #6c602f 5px 0 20px;
+    font-family: cursive;
+}
+
+.logo a {
+    color: black;
+
+    &:hover {
+        color: #1890ff;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.content {
+    width: 1000px;
+}
+
+.btn-create-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.ant-table-wrapper {
+    width: 1000px;
+}
+
+.ant-modal-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.ant-modal {
+    top: 0;
+}
+
+.ant-menu-horizontal {
+    border-bottom: none;
+}
+
+.ant-btn-sm {
+    margin: 0 5px;
+}
+
+.ant-form-item {
+    margin: 0px 0 15px;
+}
