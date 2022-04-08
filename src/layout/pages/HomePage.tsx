@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, RootStateOrAny } from 'react-redux';
 import { Button, Space } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
 import { fetchData, deleteUser } from 'actions/dataActions';
-import { UpdateModal, DeleteModal } from 'components/Modal'
+import { UpdateModal } from 'components/UpdateModal';
+import { DeleteModal } from 'components/DeleteModal';
 import Table from 'components/Table';
 
 function HomePage() {
@@ -17,7 +18,7 @@ function HomePage() {
         open_issues: 0,
         private: 'false'
     };
-    const dataRepos = useSelector((state) => state.dataReducer.dataRepos);
+    const dataRepos = useSelector((state: RootStateOrAny) => state.dataReducer.dataRepos);
     const [values, setValues] = useState(initialUser);
     const [mode, setMode] = useState('edit');
 
@@ -31,7 +32,7 @@ function HomePage() {
     // Edit modal
     const [showModal, setShowModal] = useState(false);
     const toggleModal = () => setShowModal(!showModal);
-    const handleEdit = (user) => {
+    const handleEdit = (user: any) => {
         setMode('edit');
         setValues({
             id: user.id,
@@ -49,7 +50,7 @@ function HomePage() {
     const [delId, setDelId] = useState(0);
     const [showDelModal, setShowDelModal] = useState(false);
     const toggleDeleteModal = () => setShowDelModal(!showDelModal);
-    const onDeleteClick = (record) => {
+    const onDeleteClick = (record: any) => {
         setDelId(record.id);
         toggleDeleteModal();
     }

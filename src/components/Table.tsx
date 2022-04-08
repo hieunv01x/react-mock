@@ -2,7 +2,13 @@ import React from 'react';
 import { Table as TableAntd, Button } from 'antd';
 import { DeleteOutlined, EditTwoTone } from '@ant-design/icons';
 
-function Table({ dataRepos, handleEdit, onDeleteClick }) {
+export interface Props {
+    dataRepos: any,
+    handleEdit: (param: any) => void
+    onDeleteClick: (param: any) => void
+}
+
+function Table({ dataRepos, handleEdit, onDeleteClick }: Props) {
 
     const columns = [
         {
@@ -46,14 +52,14 @@ function Table({ dataRepos, handleEdit, onDeleteClick }) {
             dataIndex: 'private',
             key: 'private',
             width: '10%',
-            render: (text) => String(text),
+            render: (text: any) => String(text),
         },
         {
             title: 'Action',
             dataIndex: 'action',
             key: 'action',
             width: '10%',
-            render: (text, record) => (
+            render: (text: string, record: any) => (
                 <span>
                     <Button size="small" danger
                         icon={<DeleteOutlined />}
@@ -69,9 +75,8 @@ function Table({ dataRepos, handleEdit, onDeleteClick }) {
     ]
 
     return (
-
         <TableAntd dataSource={dataRepos} columns={columns} rowKey="id"
-            className="ant-table-content" size='small' bordered='true'
+            className="ant-table-content" size='small' bordered={true}
             pagination={{ defaultPageSize: 6, showSizeChanger: true, pageSizeOptions: ['4', '6', '8'] }}>
         </TableAntd>
     )

@@ -3,7 +3,14 @@ import { useDispatch } from 'react-redux';
 import { Modal, Form, Input, Select } from 'antd';
 import { updateUser, createUser } from 'actions/dataActions';
 
-export function UpdateModal({ showModal, toggleModal, data, mode }) {
+export interface Props {
+    showModal: boolean;
+    toggleModal: () => void;
+    data: any;
+    mode: string;
+}
+
+export function UpdateModal({ showModal, toggleModal, data, mode }: Props) {
     const dispatch = useDispatch();
     const { Option } = Select;
     const [form] = Form.useForm();
@@ -31,7 +38,7 @@ export function UpdateModal({ showModal, toggleModal, data, mode }) {
             });
     }
 
-    const onSubmit = (user) => {
+    const onSubmit = (user: any) => {
         if (mode === 'edit') {
             dispatch(updateUser({ user: user }));
         } else if (mode === 'create') {
@@ -40,7 +47,7 @@ export function UpdateModal({ showModal, toggleModal, data, mode }) {
         toggleModal();
     };
 
-    const validateNumber = (e) => {
+    const validateNumber = (e: any) => {
         if (e.which < 48 || e.which > 57) e.preventDefault();
     }
 
@@ -99,12 +106,3 @@ export function UpdateModal({ showModal, toggleModal, data, mode }) {
         </Modal>
     );
 };
-
-export function DeleteModal({ showModal, toggleModal, handleDelete }) {
-    return (
-        <Modal title='Delete modal' visible={showModal} okText='Delete'
-            onOk={handleDelete} okType='danger primary' onCancel={toggleModal} >
-            <p>Are you sure to delete it?</p>
-        </Modal>
-    )
-}

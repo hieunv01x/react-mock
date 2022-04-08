@@ -10,7 +10,7 @@ const initialState = {
     dataRepos: []
 };
 
-const dataReducer = (state = initialState, action) => {
+const dataReducer = (state = initialState, action: any) => {
     switch (action.type) {
         case FETCH_DATA:
             return { ...state, dataRepos: action.payload };
