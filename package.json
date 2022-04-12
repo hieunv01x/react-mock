@@ -16,6 +16,7 @@
     "react-scripts": "5.0.0",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.4.1",
     "sass": "^1.49.11",
     "short-unique-id": "^4.4.4",
@@ -27,11 +28,23 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "webpack"
+    "dev": "webpack",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": [
       "react-app"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
     ]
   },
   "browserslist": {
@@ -47,7 +60,18 @@
     ]
   },
   "devDependencies": {
+    "@storybook/addon-actions": "^6.4.21",
+    "@storybook/addon-essentials": "^6.4.21",
+    "@storybook/addon-interactions": "^6.4.21",
+    "@storybook/addon-links": "^6.4.21",
+    "@storybook/builder-webpack5": "^6.4.21",
+    "@storybook/manager-webpack5": "^6.4.21",
+    "@storybook/node-logger": "^6.4.21",
+    "@storybook/preset-create-react-app": "^4.1.0",
+    "@storybook/react": "^6.4.21",
+    "@storybook/testing-library": "^0.0.9",
     "@types/lodash": "^4.14.181",
+    "@types/redux-mock-store": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^8.11.0",
@@ -58,8 +82,9 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.8",
     "prettier": "^2.6.0",
     "redux-devtools-extension": "^2.13.9",
-    "webpack": "^5.71.0"
+    "webpack": "^5.72.0"
   }
 }
