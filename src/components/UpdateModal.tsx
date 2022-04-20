@@ -10,7 +10,7 @@ export interface Props {
   mode: string;
 }
 
-export function UpdateModal({ showModal, toggleModal, data, mode }: Props) {
+export default function UpdateModal({ showModal, toggleModal, data, mode }: Props) {
   const dispatch = useDispatch();
   const { Option } = Select;
   const [form] = Form.useForm();

@@ -14,6 +14,7 @@
     "react-redux": "^7.2.8",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-test-renderer": "^18.0.0",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
     "redux-mock-store": "^1.5.4",
@@ -26,9 +27,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "dev": "webpack",
+    "jest": "jest",
+    "jest:coverage": "jest --coverage",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
   },
@@ -60,6 +63,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-flow": "^7.16.7",
+    "@babel/preset-react": "^7.16.7",
     "@storybook/addon-actions": "^6.4.21",
     "@storybook/addon-essentials": "^6.4.21",
     "@storybook/addon-interactions": "^6.4.21",
@@ -70,10 +76,14 @@
     "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^6.4.21",
     "@storybook/testing-library": "^0.0.9",
+    "@types/enzyme": "^3.10.12",
+    "@types/jest": "^27.4.1",
     "@types/lodash": "^4.14.181",
     "@types/redux-mock-store": "^1.0.3",
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^8.11.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.5.0",
@@ -85,6 +95,7 @@
     "eslint-plugin-storybook": "^0.5.8",
     "prettier": "^2.6.0",
     "redux-devtools-extension": "^2.13.9",
+    "ts-node": "^10.7.0",
     "webpack": "^5.72.0"
   }
 }
